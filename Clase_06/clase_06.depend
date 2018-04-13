@@ -1,5 +1,7 @@
 # depslib dependency file v1.0
-1523622549 source:c:\users\alumno\desktop\palomo\clase_06\main.c
+1523624004 source:c:\users\alumno\desktop\palomo\clase_06\main.c
 	<stdio.h>
 	<stdlib.h>
+
+1523623137 source:c:\users\alumno\desktop\palomo\clase_06\ordenamiento.c
 
