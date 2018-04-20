@@ -6,6 +6,7 @@ int buscarLibre(int[], int);
 void mostrarAlumnos(int[], char[][20], int[], int[], float[], int);
 float calcularPromedio(int, int);
 int cargarAlumno(int[], char[][20], int[], int[], float[], int);
+void ordenamiento(void);
 
 
 int main()
@@ -113,5 +114,32 @@ void mostrarAlumnos(int legajo[], char nombres[][20], int nota1[], int nota2[], 
 
             }
 
+}
+void ordenamiento(void)
+{
+
+    for(i=0;i<TAM;i++)
+    {
+        for(j=i+1;j<TAM;j++)
+        {
+            if(strcmp(vectorString[i],vectorString[j])>0)
+            {
+
+           strcpy(auxiliar,vectorString[i]);
+           strcpy(vectorString[i],vectorString[j]);
+           strcpy(vectorString[j],auxiliar);
+
+           auxiliarInt=legajos[i];
+           legajos[i]=legajos[j];
+           legajos[j]=auxiliarInt;
+
+           auxiliarFlo=vectorFloat[i];
+           vectorFloat[i]=vectorFloat[j];
+           vectorFloat[j]=auxiliarFlo;
+
+                }
+
+        }
+    }
 }
 
