@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1524235114 source:c:\users\alumno\desktop\palomo\programacion_1_laboratorio_1\abm paralelos\main.c
+	<stdio.h>
+	<stdlib.h>
+
