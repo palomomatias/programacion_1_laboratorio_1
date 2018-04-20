@@ -6,7 +6,7 @@ int buscarLibre(int[], int);
 void mostrarAlumnos(int[], char[][20], int[], int[], float[], int);
 float calcularPromedio(int, int);
 int cargarAlumno(int[], char[][20], int[], int[], float[], int);
-void ordenamiento(void);
+
 
 
 int main()
@@ -19,6 +19,9 @@ int main()
     int opcion;
     int index;
     int i;
+    int j;
+    char auxiliarChar [30];
+    int auxiliarInt;
     do
     {
         printf("1. ALTAS\n2. MOSTRAR\n3. MODIFICAR\n4.BAJA\n5.ORDENAR (por nombre)\n9. SALIR\nElija una opcion: ");
@@ -43,8 +46,44 @@ int main()
         mostrarAlumnos(legajo,nombre,nota1,nota2,promedio,TAM);
 
 
-        break;
+            break;
         case 3:
+            break;
+        case 4:
+            break;
+        case 5:
+                for(i=0;i<TAM;i++)
+    {
+        for(j=i+1;j<TAM;j++)
+        {
+            if(strcmp(nombre[i],nombre[j])>0)
+            {
+
+           strcpy(auxiliarChar,nombre[i]);
+           strcpy(nombre[i],nombre[j]);
+           strcpy(nombre[j],auxiliarChar);
+
+           auxiliarInt=legajo[i];
+           legajo[i]=legajo[j];
+           legajo[j]=auxiliarInt;
+
+            auxiliarInt=nota1[i];
+           nota1[i]=nota1[j];
+           nota1[j]=auxiliarInt;
+               auxiliarInt=nota2[i];
+           nota2[i]=nota2[j];
+           nota2[j]=auxiliarInt;
+           for(i=0;i<TAM;i++)
+           {
+               printf("%s--%d--%d",legajo[i],nota1[i],nota2[i]);
+           }
+
+
+                }
+
+        }
+    }
+
 
         }
 
@@ -78,6 +117,7 @@ int cargarAlumno(int legajo[], char nombre[][20], int nota1[], int nota2[], floa
     int index ;
 
 
+
     index = buscarLibre(legajo, tam);
             if(index!=-1)
             {
@@ -90,7 +130,10 @@ int cargarAlumno(int legajo[], char nombre[][20], int nota1[], int nota2[], floa
     scanf("%d",&index[nota1]);
     printf("ingrese su nota2\n",nota2[index]);
     scanf ("%d",&index[nota2]);
+
+
             }
+
             return index;
 }
 
@@ -115,31 +158,8 @@ void mostrarAlumnos(int legajo[], char nombres[][20], int nota1[], int nota2[], 
             }
 
 }
-void ordenamiento(void)
-{
 
-    for(i=0;i<TAM;i++)
-    {
-        for(j=i+1;j<TAM;j++)
-        {
-            if(strcmp(vectorString[i],vectorString[j])>0)
-            {
 
-           strcpy(auxiliar,vectorString[i]);
-           strcpy(vectorString[i],vectorString[j]);
-           strcpy(vectorString[j],auxiliar);
 
-           auxiliarInt=legajos[i];
-           legajos[i]=legajos[j];
-           legajos[j]=auxiliarInt;
 
-           auxiliarFlo=vectorFloat[i];
-           vectorFloat[i]=vectorFloat[j];
-           vectorFloat[j]=auxiliarFlo;
-
-                }
-
-        }
-    }
-}
 
