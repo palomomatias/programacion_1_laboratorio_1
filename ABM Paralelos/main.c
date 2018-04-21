@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define TAM 4
+#include<string.h>
 
 int buscarLibre(int[], int);
 void mostrarAlumnos(int[], char[][20], int[], int[], float[], int);
@@ -116,22 +117,21 @@ int cargarAlumno(int legajo[], char nombre[][20], int nota1[], int nota2[], floa
 {
     int index ;
 
-
-
     index = buscarLibre(legajo, tam);
             if(index!=-1)
             {
     printf("ingrese un legajo\n",legajo);
     scanf("%d",&index[legajo]);
     printf("ingrese su nombre\n",nombre);
-    fflush(stdin);
-    gets(index[nombre]);
+    //fflush(stdin);
+    scanf("%*c%[^\n]",nombre[index]);
     printf("ingrese nota1\n",nota1);
     scanf("%d",&index[nota1]);
     printf("ingrese su nota2\n",nota2[index]);
     scanf ("%d",&index[nota2]);
+    promedio[index]=calcularPromedio(nota1[index],nota2[index]);
 
-
+//fgets( &nombre, 30, stdin );
             }
 
             return index;
@@ -152,7 +152,7 @@ void mostrarAlumnos(int legajo[], char nombres[][20], int nota1[], int nota2[], 
             {
                 if(legajo[i]!=0)
                 {
-                    printf("%d %s %d %d %f\n", legajo[i], nombres[i], nota1[i], nota2[i], promedio[i] );
+                    printf("legajo:%d nombre:%s NotaUno:%d NotaDos:%d Promedio:%f\n", legajo[i], nombres[i], nota1[i], nota2[i], promedio[i] );
                 }
 
             }
