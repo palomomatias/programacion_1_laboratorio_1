@@ -7,6 +7,7 @@ int buscarLibre(int[], int);
 void mostrarAlumnos(int[], char[][20], int[], int[], float[], int);
 float calcularPromedio(int, int);
 int cargarAlumno(int[], char[][20], int[], int[], float[], int);
+void modificarAlumno(int[], char[][20], int[], int[], float[], int);
 
 
 int main()
@@ -48,6 +49,8 @@ int main()
 
             break;
         case 3:
+        modificarAlumno(legajo,nombre,nota1,nota2,promedio,TAM);
+
             break;
         case 4:
 
@@ -111,6 +114,57 @@ int main()
 
     return 0;
 }
+
+void modificarAlumno(int legajo[], char nombre [][20], int nota1[], int nota2[], float promedio[], int tam)
+{
+
+   int opcion;
+   char nombreAux[30];
+   char nombreCambiar[30];
+   int i;
+
+
+        printf("que desea modiicar?\n 1-NOMBRE \n 2-NOTAUNO \n 3-NOTADOS \n Elija una opcion: ");
+        scanf("%d", &opcion);
+        switch(opcion)
+        {
+        case 1:
+   printf("ingrese el nombre que quiere modificar\n",nombreAux);
+            scanf("%*c%[^\n]",nombreAux);
+                               while (strcmp(nombreAux,nombre[i])!=0)
+                {
+                      printf("error el nombre no existe, reingrese \n",nombreAux);
+            scanf("%*c%[^\n]",nombreAux);
+                }
+                for (i=0;i<tam;i++)
+            {
+
+                                     if(strcmp(nombreAux,nombre[i])==0)
+            {
+                printf("ingrese su nuevo nombre\n",nombreCambiar);
+                scanf("%*c%[^\n]",nombreCambiar);
+
+            strcpy(nombre[i],nombreCambiar);
+            printf("su nuevo nombre es %s\n",nombre[i]);
+
+            }
+
+            }
+
+
+
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        }
+
+
+}
+
+
+
 
 int buscarLibre(int legajo[], int tam)
 {
