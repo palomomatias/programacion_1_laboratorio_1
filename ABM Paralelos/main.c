@@ -9,14 +9,13 @@ float calcularPromedio(int, int);
 int cargarAlumno(int[], char[][20], int[], int[], float[], int);
 
 
-
 int main()
 {
     int legajo[TAM]= {55,20};
     char nombre[TAM][20]={"jose","maria"};
     int nota1[TAM]={4,3};
     int nota2[TAM]={4,3};
-    float promedio[TAM];
+    float promedio[TAM]={4,3};
     int opcion;
     int index;
     int i;
@@ -51,9 +50,10 @@ int main()
         case 3:
             break;
         case 4:
+
             break;
         case 5:
-                for(i=0;i<TAM;i++)
+                         for(i=0;i<TAM;i++)
     {
         for(j=i+1;j<TAM;j++)
         {
@@ -71,20 +71,35 @@ int main()
             auxiliarInt=nota1[i];
            nota1[i]=nota1[j];
            nota1[j]=auxiliarInt;
-               auxiliarInt=nota2[i];
+
+            auxiliarInt=nota2[i];
            nota2[i]=nota2[j];
            nota2[j]=auxiliarInt;
-           for(i=0;i<TAM;i++)
-           {
-               printf("%s--%d--%d",legajo[i],nota1[i],nota2[i]);
-           }
+
+            auxiliarInt=promedio[i];
+            promedio[i]=promedio[j];
+            promedio[j]=auxiliarInt;
+
+
 
 
                 }
 
         }
-    }
+        }
+            for(i=0;i<TAM;i++)
+            {
+                if (legajo[i]!=0)
+                {
+                    printf("nombre:%s legajo:%d NotaUno:%d NotaDos:%d Promedio:%.2f\n",nombre[i], legajo[i], nota1[i], nota2[i], promedio[i] );
+                }
+            }
 
+
+
+
+
+            break;
 
         }
 
@@ -152,7 +167,7 @@ void mostrarAlumnos(int legajo[], char nombres[][20], int nota1[], int nota2[], 
             {
                 if(legajo[i]!=0)
                 {
-                    printf("legajo:%d nombre:%s NotaUno:%d NotaDos:%d Promedio:%f\n", legajo[i], nombres[i], nota1[i], nota2[i], promedio[i] );
+                    printf("legajo:%d nombre:%s NotaUno:%d NotaDos:%d Promedio:%.2f\n", legajo[i], nombres[i], nota1[i], nota2[i], promedio[i] );
                 }
 
             }
