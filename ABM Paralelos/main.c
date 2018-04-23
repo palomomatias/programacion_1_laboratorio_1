@@ -12,7 +12,7 @@ void modificarAlumno(int[], char[][20], int[], int[], float[], int);
 
 int main()
 {
-    int legajo[TAM]= {55,20};
+    int legajo[TAM]= {1,55};
     char nombre[TAM][20]={"jose","maria"};
     int nota1[TAM]={4,3};
     int nota2[TAM]={4,3};
@@ -31,25 +31,29 @@ int main()
         switch(opcion)
         {
         case 1:
-
+    system("/usr/bin/clear");
             index=cargarAlumno(legajo,nombre,nota1,nota2,promedio,TAM);
             if(index == -1)
             {
                 printf("No hay lugar");
             }
             else
-            {
+            {system("/usr/bin/clear");
                 printf("Alumno ingresado\n");
+
             }
+
             break;
         case 2:
-
+system("/usr/bin/clear");
         mostrarAlumnos(legajo,nombre,nota1,nota2,promedio,TAM);
 
-
+system("/usr/bin/clear");
             break;
         case 3:
+system("/usr/bin/clear");
         modificarAlumno(legajo,nombre,nota1,nota2,promedio,TAM);
+system("/usr/bin/clear");
 
             break;
         case 4:
@@ -82,10 +86,6 @@ int main()
             auxiliarInt=promedio[i];
             promedio[i]=promedio[j];
             promedio[j]=auxiliarInt;
-
-
-
-
                 }
 
         }
@@ -109,61 +109,8 @@ int main()
     }
     while(opcion!=9);
 
-
-
-
     return 0;
 }
-
-void modificarAlumno(int legajo[], char nombre [][20], int nota1[], int nota2[], float promedio[], int tam)
-{
-
-   int opcion;
-   char nombreAux[30];
-   char nombreCambiar[30];
-   int i;
-
-
-        printf("que desea modiicar?\n 1-NOMBRE \n 2-NOTAUNO \n 3-NOTADOS \n Elija una opcion: ");
-        scanf("%d", &opcion);
-        switch(opcion)
-        {
-        case 1:
-   printf("ingrese el nombre que quiere modificar\n",nombreAux);
-            scanf("%*c%[^\n]",nombreAux);
-                               while (strcmp(nombreAux,nombre[i])!=0)
-                {
-                      printf("error el nombre no existe, reingrese \n",nombreAux);
-            scanf("%*c%[^\n]",nombreAux);
-                }
-                for (i=0;i<tam;i++)
-            {
-
-                                     if(strcmp(nombreAux,nombre[i])==0)
-            {
-                printf("ingrese su nuevo nombre\n",nombreCambiar);
-                scanf("%*c%[^\n]",nombreCambiar);
-
-            strcpy(nombre[i],nombreCambiar);
-            printf("su nuevo nombre es %s\n",nombre[i]);
-
-            }
-
-            }
-
-
-
-            break;
-        case 2:
-            break;
-        case 3:
-            break;
-        }
-
-
-}
-
-
 
 
 int buscarLibre(int legajo[], int tam)
@@ -184,13 +131,15 @@ int buscarLibre(int legajo[], int tam)
 
 int cargarAlumno(int legajo[], char nombre[][20], int nota1[], int nota2[], float promedio[], int tam)
 {
+
     int index ;
+
 
     index = buscarLibre(legajo, tam);
             if(index!=-1)
             {
     printf("ingrese un legajo\n",legajo);
-    scanf("%d",&index[legajo]);
+    scanf("%d",&legajo[index]);
     printf("ingrese su nombre\n",nombre);
     //fflush(stdin);
     scanf("%*c%[^\n]",nombre[index]);
@@ -216,6 +165,8 @@ float calcularPromedio(int nota1, int nota2)
 
 void mostrarAlumnos(int legajo[], char nombres[][20], int nota1[], int nota2[], float promedio[], int tam)
 {
+
+
     int i;
     for(i=0; i<tam; i++)
             {
@@ -226,8 +177,59 @@ void mostrarAlumnos(int legajo[], char nombres[][20], int nota1[], int nota2[], 
 
             }
 
+
 }
 
+void modificarAlumno(int legajo[], char nombre [][20], int nota1[], int nota2[], float promedio[], int tam)
+{
+   int opcion;
+   int opcionLegajo;
+   char nombreAux[30];
+   char nombreCambiar[30];
+   int i;
+//system("/usr/bin/clear");//para linux es esto
+
+/*for (j=0;j<TAM;j++)
+{
+
+}*/
+mostrarAlumnos(legajo,nombre,nota1,nota2,promedio,TAM);
+
+printf("ingrese el legajo que quiere modificar \n",opcionLegajo);
+    scanf("%d",&opcionLegajo);
+
+
+  /* while(opcionLegajo!=legajo)
+    {
+            printf ("el legajo no existe REINGRESAR \n",opcionLegajo);
+    scanf("%d",&opcionLegajo);
+    }*/
+
+for (i=0;i<TAM;i++)
+{
+
+   if (opcionLegajo==legajo[i])
+   {printf("que desea modiicar?\n 1-NOMBRE \n 2-NOTAUNO \n 3-NOTADOS \n Elija una opcion: ");
+    scanf("%d", &opcion);
+        switch(opcion)
+        {
+        case 1:
+            printf("Su nombre actual es %s ingrese su nuevo nombre: \n",nombre[i],nombreAux);
+
+            scanf("%*c%[^\n]",nombreAux);
+            strcpy(nombre[i],nombreAux);
+            printf("Su nuevo nombre es %s\n",nombre[i]);
+               break;
+        case 2:
+            break;
+        case 3:
+            break;
+        }
+
+   }
+   }
+
+}
 
 
 
