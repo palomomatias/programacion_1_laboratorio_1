@@ -57,7 +57,7 @@ system("/usr/bin/clear");
 
             break;
         case 4:
-
+        darDeBaja(legajo,nombre,nota1,nota2,promedio,TAM);
             break;
         case 5:
                          for(i=0;i<TAM;i++)
@@ -240,6 +240,24 @@ for (i=0;i<TAM;i++)
 
 }
 
+void darDeBaja(int legajo[], char nombre [][20], int nota1[], int nota2[], float promedio[], int tam)
+{
+    int opcionLegajo;
+    int i;
 
+    mostrarAlumnos(legajo,nombre,nota1,nota2,promedio,TAM);
 
+printf("ingrese el legajo que quiere dar de baja \n",opcionLegajo);
+    scanf("%d",&opcionLegajo);
+    for (i=0;i<TAM;i++)
+{
+   if (opcionLegajo==legajo[i])
+   {
+       legajo[i]=0;
+       printf("el legajo se a dado de baja\n");
 
+   }
+
+}
+
+}
