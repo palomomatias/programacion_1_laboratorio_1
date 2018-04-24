@@ -8,6 +8,7 @@ void mostrarAlumnos(int[], char[][20], int[], int[], float[], int);
 float calcularPromedio(int, int);
 int cargarAlumno(int[], char[][20], int[], int[], float[], int);
 void modificarAlumno(int[], char[][20], int[], int[], float[], int);
+void darDeBaja(int[], char[][20], int[], int[], float[], int);
 
 
 int main()
@@ -16,18 +17,18 @@ int main()
     char nombre[TAM][20]={"jose","maria"};
     int nota1[TAM]={4,3};
     int nota2[TAM]={4,3};
-    float promedio[TAM]={4,3};
+    float promedio[TAM];
     int opcion;
     int index;
     int i;
     int j;
     char auxiliarChar [30];
     int auxiliarInt;
-    do
+
+   do
     {
         printf("1. ALTAS\n2. MOSTRAR\n3. MODIFICAR\n4.BAJA\n5.ORDENAR (por nombre)\n9. SALIR\nElija una opcion: ");
         scanf("%d", &opcion);
-
         switch(opcion)
         {
         case 1:
@@ -46,14 +47,13 @@ int main()
             break;
         case 2:
 system("/usr/bin/clear");
+
         mostrarAlumnos(legajo,nombre,nota1,nota2,promedio,TAM);
 
-system("/usr/bin/clear");
             break;
         case 3:
 system("/usr/bin/clear");
         modificarAlumno(legajo,nombre,nota1,nota2,promedio,TAM);
-system("/usr/bin/clear");
 
             break;
         case 4:
@@ -97,13 +97,7 @@ system("/usr/bin/clear");
                     printf("nombre:%s legajo:%d NotaUno:%d NotaDos:%d Promedio:%.2f\n",nombre[i], legajo[i], nota1[i], nota2[i], promedio[i] );
                 }
             }
-
-
-
-
-
             break;
-
         }
 
     }
@@ -173,8 +167,8 @@ void mostrarAlumnos(int legajo[], char nombres[][20], int nota1[], int nota2[], 
                 if(legajo[i]!=0)
                 {
                     printf("legajo:%d nombre:%s NotaUno:%d NotaDos:%d Promedio:%.2f\n", legajo[i], nombres[i], nota1[i], nota2[i], promedio[i] );
-                }
 
+                }
             }
 
 
@@ -185,29 +179,23 @@ void modificarAlumno(int legajo[], char nombre [][20], int nota1[], int nota2[],
    int opcion;
    int opcionLegajo;
    char nombreAux[30];
-   char nombreCambiar[30];
    int i;
+   int auxNota;
 //system("/usr/bin/clear");//para linux es esto
-
 /*for (j=0;j<TAM;j++)
-{
-
-}*/
+{}*/
 mostrarAlumnos(legajo,nombre,nota1,nota2,promedio,TAM);
 
 printf("ingrese el legajo que quiere modificar \n",opcionLegajo);
     scanf("%d",&opcionLegajo);
 
-
-  /* while(opcionLegajo!=legajo)
+/* while(opcionLegajo!=legajo[j])
     {
             printf ("el legajo no existe REINGRESAR \n",opcionLegajo);
     scanf("%d",&opcionLegajo);
     }*/
-
 for (i=0;i<TAM;i++)
 {
-
    if (opcionLegajo==legajo[i])
    {printf("que desea modiicar?\n 1-NOMBRE \n 2-NOTAUNO \n 3-NOTADOS \n Elija una opcion: ");
     scanf("%d", &opcion);
@@ -221,9 +209,30 @@ for (i=0;i<TAM;i++)
             printf("Su nuevo nombre es %s\n",nombre[i]);
                break;
         case 2:
+            printf("su nota acutal es: %d ingrese se nueva nota:",nota1[i]);
+            scanf("%d",&auxNota);
+            while(auxNota>11&&auxNota<0)
+            {
+                printf("reingrese su nota entre 1 y 10:\n");
+                scanf("%d",&auxNota);
+            }
+            nota1[i]=auxNota;
+            printf("se a cambiado correcatamente la nota uno\n");
+
+
+
             break;
         case 3:
-            break;
+                       printf("su nota acutal es: %d ingrese se nueva nota:",nota2[i]);
+            scanf("%d",&auxNota);
+            while(auxNota>11||auxNota<0)
+            {
+                printf("reingrese su nota entre 1 y 10:\n");
+                scanf("%d",&auxNota);
+            }
+            nota2[i]=auxNota;
+            printf("se a cambiado correcatamente la nota dos\n");
+                    break;
         }
 
    }
