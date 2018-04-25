@@ -166,6 +166,8 @@ void mostrarAlumnos(int legajo[], char nombres[][20], int nota1[], int nota2[], 
             {
                 if(legajo[i]!=0)
                 {
+
+                     promedio[i]=calcularPromedio(nota1[i],nota2[i]);
                     printf("legajo:%d nombre:%s NotaUno:%d NotaDos:%d Promedio:%.2f\n", legajo[i], nombres[i], nota1[i], nota2[i], promedio[i] );
 
                 }
@@ -181,6 +183,7 @@ void modificarAlumno(int legajo[], char nombre [][20], int nota1[], int nota2[],
    char nombreAux[30];
    int i;
    int auxNota;
+
 //system("/usr/bin/clear");//para linux es esto
 /*for (j=0;j<TAM;j++)
 {}*/
@@ -217,6 +220,7 @@ for (i=0;i<TAM;i++)
                 scanf("%d",&auxNota);
             }
             nota1[i]=auxNota;
+             promedio[i]=calcularPromedio(nota1[i],nota2[i]);
             printf("se a cambiado correcatamente la nota uno\n");
 
 
@@ -230,6 +234,7 @@ for (i=0;i<TAM;i++)
                 printf("reingrese su nota entre 1 y 10:\n");
                 scanf("%d",&auxNota);
             }
+             promedio[i]=calcularPromedio(nota1[i],nota2[i]);
             nota2[i]=auxNota;
             printf("se a cambiado correcatamente la nota dos\n");
                     break;
