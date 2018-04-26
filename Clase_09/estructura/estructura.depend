@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1524755285 source:d:\palomomatias\estructuras\estructura\localidad.c
+	"localidad.h"
+
+1524754143 d:\palomomatias\estructuras\estructura\localidad.h
+
+1524755296 source:d:\palomomatias\estructuras\estructura\main.c
+	<stdio.h>
+	<stdlib.h>
+	"localidad.h"
+	<string.h>
+
