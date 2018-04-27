@@ -18,6 +18,7 @@ int main()
      //   mostrarListaSeries(listaDeSeries,TAMSERIE);
     //mostrarListaUsuarios(listaDeUsuarios,TAMUSUARIO);
 mostrarUsuarioConSuSerie(listaDeUsuarios,TAMUSUARIO,listaDeSeries,TAMSERIE);
+mostrarSeriesYusuarios(listaDeUsuarios,TAMUSUARIO,listaDeSeries,TAMSERIE);
 
 /*  1. Mostrar el listado de series
     2. Mostrar el listado de usuarios

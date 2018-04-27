@@ -50,13 +50,50 @@ void mostrarUsuarioConSuSerie(eUsuario usuario[], int largoUsuario, eSerie serie
     int j;
     for(i=0;i<largoUsuario;i++)
     {
-        for (j=0;i<largoSerie;j++)
+         for(j=0;j<largoSerie;j++)
+    {
+
+    if(usuario[i].idSerie==serie[j].idSerie)
+
         {
-            if(usuario[i].estado!=0&&serie[j].estado!=0)
-            {
-                printf("%s",usuario[i].nombre);
-            }
-        }
+
+           if(serie[j].idSerie!=0)
+           {
+                    printf("\n%s %s",usuario[i].nombre,serie[j].nombre);
+           break;
+                }
+             }
+    }
+    }
+}
+
+void mostrarSeriesYusuarios(eUsuario usuario[], int largoUsuario, eSerie serie[], int largoSerie)
+{
+    int i;
+    int j;
+    int aux[30];
+    int s;
+    for(i=0;i<largoSerie;i++)
+    {
+      if(serie[i].idSerie!=0)
+      {
+          printf("%s\n",serie[i].nombre);
+      for(j=0;j<largoUsuario;j++)
+      {
+          if(serie[i].idSerie==usuario[j].idSerie)
+          {
+              printf("%s\n",usuario[j].nombre);
+          }
+      }
+
+
+
+      }
+
 
     }
 }
+
+
+
+
