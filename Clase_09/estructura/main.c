@@ -12,7 +12,7 @@ traer menu para el parcial
 
 int main()
 {
-  eLocalidad listadoDeLocalidad[TAM];
+  /*eLocalidad listadoDeLocalidad[TAM];
 
        int i;
         for(i=0;i<TAM;i++)
@@ -21,19 +21,20 @@ int main()
             listadoDeLocalidad[i].estado=1;
             strcpy(listadoDeLocalidad[i].nombreLocalidad,"lanus");
         }
-
-    loc_MostrarListado(listadoDeLocalidad,TAM);
-
-
+*/
+ //   loc_MostrarListado(listadoDeLocalidad,TAM);
 
 
-    /*  estructuraEjemplo miEstructura;
+
+
+  /*  estructuraEjemplo miEstructura;
 
     printf("%s"),miEstructura.nombre;
-    */
 
 
-    eLocalidad NuevaLocalidad;
+*/
+
+   /* eLocalidad NuevaLocalidad;
     NuevaLocalidad.estado=1;
     NuevaLocalidad.id=555;
 
@@ -42,6 +43,7 @@ int main()
 
    // printf("%s",NuevaLocalidad.nombreLocalidad);
     loc_MostrarUno(NuevaLocalidad);
+    */
 
     return 0;
 }

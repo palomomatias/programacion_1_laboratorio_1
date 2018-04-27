@@ -10,3 +10,14 @@
 	"localidad.h"
 	<string.h>
 
+1524800883 source:j:\facultad\programacion_1_laboratorio_1\clase_09\estructura\localidad.c
+	"localidad.h"
+
+1524807569 j:\facultad\programacion_1_laboratorio_1\clase_09\estructura\localidad.h
+
+1524797928 source:j:\facultad\programacion_1_laboratorio_1\clase_09\estructura\main.c
+	<stdio.h>
+	<stdlib.h>
+	"localidad.h"
+	<string.h>
+
