@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1525358278 source:d:\palomo matias\parcialtest\primerparcialtest\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1525357266 d:\palomo matias\parcialtest\primerparcialtest\funciones.h
+
+1525357256 source:d:\palomo matias\parcialtest\primerparcialtest\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
