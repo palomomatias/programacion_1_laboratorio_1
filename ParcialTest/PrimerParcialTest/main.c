@@ -12,7 +12,7 @@ int main()
     int opcion=0;
     eUsuario listaUsuarios[tamUsuarios];
     inicializadorEstadoUsuario(listaUsuarios,tamUsuarios);
-    inicializarUsuariosHardCode(listaUsuarios);
+  //  inicializarUsuariosHardCode(listaUsuarios);
 
     while(seguir=='s')
     {
@@ -46,6 +46,7 @@ int main()
                 darDebaja(listaUsuarios,tamUsuarios);
                 break;
             case 5:
+                ordenarPorNombre(listaUsuarios,tamUsuarios);
                 break;
             case 6:
                 break;

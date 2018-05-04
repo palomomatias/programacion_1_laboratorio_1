@@ -25,15 +25,16 @@
 	<string.h>
 	"funciones.h"
 
-1525438068 source:c:\users\alumno\desktop\programacion_1_laboratorio_1\parcialtest\primerparcialtest\funciones.c
+1525447293 source:c:\users\alumno\desktop\programacion_1_laboratorio_1\parcialtest\primerparcialtest\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"funciones.h"
+	<ctype.h>
 
-1525437646 c:\users\alumno\desktop\programacion_1_laboratorio_1\parcialtest\primerparcialtest\funciones.h
+1525445109 c:\users\alumno\desktop\programacion_1_laboratorio_1\parcialtest\primerparcialtest\funciones.h
 
-1525437663 source:c:\users\alumno\desktop\programacion_1_laboratorio_1\parcialtest\primerparcialtest\main.c
+1525439526 source:c:\users\alumno\desktop\programacion_1_laboratorio_1\parcialtest\primerparcialtest\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funciones.h"

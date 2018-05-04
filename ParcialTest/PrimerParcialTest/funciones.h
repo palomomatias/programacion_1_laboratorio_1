@@ -16,3 +16,5 @@ int alta(eUsuario  listado[],int limite);
 void mostrarPersonas (eUsuario mostrar [],int limite);
 void darDebaja(eUsuario listado [],int limite);
 int siguienteId(eUsuario listado[],int limite);
+void ordenarPorNombre(eUsuario listado [],int limite);
+char validaStringEnter(eUsuario listado ,char auxString);
