@@ -33,7 +33,8 @@ int main()
         switch(opcion)
         {
             case 1:
-                alta(listaUsuarios,tamUsuarios);
+                                alta(listaUsuarios,tamUsuarios);
+
                 break;
             case 2:
                 mostrarPersonas(listaUsuarios,tamUsuarios);

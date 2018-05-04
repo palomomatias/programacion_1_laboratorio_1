@@ -70,18 +70,14 @@ int alta(eUsuario  listado[],int limite)
         indice = buscarLugarLibre(listado,limite);
         if(indice >= 0)
         {
-                printf("ingrese su id ");
-                scanf("%d",&listado[indice].idUsuario);
-                printf("ingrese su Nombre");
+
+                printf("ingrese su Nombre\n");
                 fflush(stdin);
                 gets(listado[indice].nombre);
+                listado[indice].idUsuario=siguienteId(listado,limite);
                 listado[indice].estado = LIBRE;
 
         }
-        else
-            {
-                printf("no hay lugar libre");
-            }
     }
     return retorno;
 }
@@ -136,20 +132,23 @@ void darDebaja(eUsuario listado [],int limite)
 {
     int opcion;
     int i;
+    int opcion2;
     mostrarPersonas(listado,limite);
     printf("ingrese el id que quiere borrar");
     scanf("%d",&opcion);
+     fflush(stdin);
     for(i=0;i<limite;i++)
     {
         if (opcion==listado[i].idUsuario)
         {
             printf("esta seguro que quiere dar de baja ? \naprete 1 para borrar 0 para cancelar ?",mostrarUno(listado[i]));
 
-            scanf("%d",&opcion);
-            if (opcion==1)
+            scanf("%d",&opcion2);
+            fflush(stdin);
+            if (opcion2==1)
             {
                 printf("Se a dado de baja");
-                listado[i].estado=LIBRE;
+                listado[i].estado=OCUPADO;
             }
             else
             {
@@ -165,7 +164,29 @@ void darDebaja(eUsuario listado [],int limite)
 
 }
 
+int siguienteId(eUsuario listado[],int limite)
+{
+    int retorno = 0;
+    int i;
+      if(limite > 0 && listado != NULL)
+      {
 
+
+        for(i=0; i<limite; i++)
+        {
+            if(listado[i].estado == LIBRE)
+            {
+                    if(listado[i].idUsuario>retorno)
+                    {
+                         retorno=listado[i].idUsuario;
+                    }
+
+            }
+        }
+      }
+
+    return retorno+1;
+}
 
 
 
