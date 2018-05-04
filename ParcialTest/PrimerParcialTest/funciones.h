@@ -14,3 +14,5 @@ void inicializarUsuariosHardCode(eUsuario usuarios[]);
 int buscarLugarLibre(eUsuario listado[],int limite);
 int alta(eUsuario  listado[],int limite);
 void mostrarPersonas (eUsuario mostrar [],int limite);
+void darDebaja(eUsuario listado [],int limite);
+

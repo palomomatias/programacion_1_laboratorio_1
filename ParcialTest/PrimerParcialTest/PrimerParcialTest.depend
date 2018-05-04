@@ -12,3 +12,16 @@
 	<stdlib.h>
 	"funciones.h"
 
+1525405621 source:c:\users\palom\desktop\programacion_1_laboratorio_1\parcialtest\primerparcialtest\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1525405136 c:\users\palom\desktop\programacion_1_laboratorio_1\parcialtest\primerparcialtest\funciones.h
+
+1525406285 source:c:\users\palom\desktop\programacion_1_laboratorio_1\parcialtest\primerparcialtest\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+

@@ -39,9 +39,10 @@ int main()
                 mostrarPersonas(listaUsuarios,tamUsuarios);
                 break;
             case 3:
-                modificar(listaUsuarios,tamUsuarios);
+                modificar(listaUsuarios,tamUsuarios);// acordate que esto va en el case 2 solo estoy tessteando el mostrar personas;
                 break;
             case 4:
+                darDebaja(listaUsuarios,tamUsuarios);
                 break;
             case 5:
                 break;
