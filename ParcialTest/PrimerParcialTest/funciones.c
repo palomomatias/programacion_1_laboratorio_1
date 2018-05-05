@@ -18,9 +18,58 @@ int isspace(char)
 
 
 */
+int validarPalabra(char palabra[])
+{
+    int i;
+    for(i=0; i<strlen(palabra); i++)
+    {
+        if(!(isalpha(palabra[i])))
+        {
+            printf("\nERROR SOLO PALABRA, REINGRESE");
+            return 0;
+        }
+    }
+    return 1;
+}
+
+
+char getChar (char mensaje[], char auxiliarChar[])
+{
+    ;
+    printf("%s", mensaje);
+    fflush(stdin);
+    scanf("%s", &auxiliarChar);
+    return auxiliarChar;
+}
+int getInt (char mensaje[])
+{
+    int auxiliarInt;
+    printf("%s", mensaje);
+    scanf("%d", &auxiliarInt);
+    return auxiliarInt;
+}
+
 int mostrarUno(eUsuario parametro)
 {
-     printf("\n %s - %d",parametro.nombre,parametro.idUsuario);
+    printf("\n %s - %d",parametro.nombre,parametro.idUsuario);
+}
+int buscarPorId(eUsuario listado[],int limite, int id)
+{
+    int retorno = -1;
+    int i;
+    if(limite > 0 && listado != NULL)
+    {
+        retorno = -2;
+        for(i=0; i<limite; i++)
+        {
+            if(listado[i].estado == LIBRE && listado[i].idUsuario == id)
+            {
+                retorno = i;
+                break;
+            }
+        }
+    }
+    return retorno;
 }
 
 int inicializadorEstadoUsuario(eUsuario listado[],int limite)
@@ -53,7 +102,6 @@ int buscarLugarLibre(eUsuario listado[],int limite)
         return indice;
     }
 }
-
 
 void inicializarUsuariosHardCode(eUsuario usuarios[])
 {
@@ -99,7 +147,7 @@ void mostrarPersonas (eUsuario mostrar [],int limite)
     int i;
     for(i=0; i<limite; i++)
     {
-        if(mostrar[i].estado!=OCUPADO)
+        if(mostrar[i].estado==LIBRE)
         {
             printf("Id:%d NOMBRE: %s \n",mostrar[i].idUsuario,mostrar[i].nombre);
 
@@ -111,35 +159,48 @@ void modificar(eUsuario listado [],int limite)
 {
     int opcion;
     int i;
-    int nombreAux[30];
     int opcion2;
+    char auxiliar[20];
     mostrarPersonas(listado, limite);
-    printf("ingrese el id que quiere modificar\n");
-    scanf("%d",&opcion);
+    opcion=getInt("ingrese el id que quiere modificar");
     for(i=0; i<limite; i++)
     {
         if(opcion==listado[i].idUsuario)
         {
-            printf("que desea modificar\n 1-NOMBRE\n");
-            scanf("%d",&opcion2);
+            opcion2=getInt("que desea modificar ? \n 1-NOMBRE\n");
             switch(opcion2)
             {
             case 1:
-                printf("INGRESE SU NUEVO NOMBRE\n");
-                fflush(stdin);
-                gets(listado[i].nombre);
+                //
+                do
+                {
+                    printf("INGRESE SU NUEVO NOMBRE\n");
+                    fflush(stdin);
+                    gets(auxiliar);
+                }
+                while(!validarPalabra(auxiliar));
+                rcpy(listado[i].nombre,auxiliar);
+                printf("se a cambiado correctamente el nombre \n");
+
+
                 break;
             case 2:
                 break;
             case 3:
                 break;
             }
-
+            break;
+        }
+        else
+        {
+            printf("el id no existe");
+            break;
         }
 
     }
-
 }
+
+
 void darDebaja(eUsuario listado [],int limite)
 {
     int opcion;
@@ -148,29 +209,29 @@ void darDebaja(eUsuario listado [],int limite)
     mostrarPersonas(listado,limite);
     printf("ingrese el id que quiere borrar");
     scanf("%d",&opcion);
-    fflush(stdin);
     for(i=0; i<limite; i++)
     {
+        fflush(stdin);
         if (opcion==listado[i].idUsuario)
         {
-            printf("esta seguro que quiere dar de baja ? \naprete 1 para borrar 0 para cancelar ?",mostrarUno(listado[i]));
-
-            scanf("%d",&opcion2);
             fflush(stdin);
+            mostrarUno(listado[i]);
+            printf("esta seguro que quiere dar de baja ? \n aprete 1 para borrar 0 para cancelar ");
+            scanf("%d",&opcion2);
+
             if (opcion2==1)
             {
+                fflush(stdin);
                 printf("Se a dado de baja");
                 listado[i].estado=2;
+                break;
             }
             else
             {
                 printf("no se a dado de baja");
             }
 
-
-
         }
-
 
     }
 
@@ -206,21 +267,21 @@ void ordenarPorNombre(eUsuario listado [],int limite)
     int j;
     for(i=0; i<limite; i++)
     {
-        for(j=i+1;j<limite;j++)
+        for(j=i+1; j<limite; j++)
         {
-        if(listado[i].idUsuario>listado[j].idUsuario)
-        {
+            if(listado[i].idUsuario>listado[j].idUsuario)
+            {
 
-        auxiliar=listado[i];
-        listado[i]=listado[j];
-        listado[j]=auxiliar;
-        }
+                auxiliar=listado[i];
+                listado[i]=listado[j];
+                listado[j]=auxiliar;
+            }
 
         }
     }
 
 
-        mostrarPersonas(listado,limite);
+    mostrarPersonas(listado,limite);
 
 
 }

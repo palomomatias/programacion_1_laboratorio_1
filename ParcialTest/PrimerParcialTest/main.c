@@ -12,7 +12,7 @@ int main()
     int opcion=0;
     eUsuario listaUsuarios[tamUsuarios];
     inicializadorEstadoUsuario(listaUsuarios,tamUsuarios);
-  //  inicializarUsuariosHardCode(listaUsuarios);
+  // inicializarUsuariosHardCode(listaUsuarios);
 
     while(seguir=='s')
     {
@@ -38,9 +38,11 @@ int main()
                 break;
             case 2:
                 mostrarPersonas(listaUsuarios,tamUsuarios);
+                getch();
                 break;
             case 3:
-                modificar(listaUsuarios,tamUsuarios);// acordate que esto va en el case 2 solo estoy tessteando el mostrar personas;
+                modificar(listaUsuarios,tamUsuarios);
+                getch();// acordate que esto va en el case 2 solo estoy tessteando el mostrar personas;
                 break;
             case 4:
                 darDebaja(listaUsuarios,tamUsuarios);
@@ -56,6 +58,7 @@ int main()
                 seguir = 'n';
                 break;
         }
+         system("cls");
     }
 
     return 0;
