@@ -1,6 +1,6 @@
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
-
+#define tamUsuarios 100
 typedef struct {
 
     char nombre[50];
@@ -9,6 +9,7 @@ typedef struct {
 
 }eUsuario;
 #endif
+char auxiliar[tamUsuarios][50];
 int inicializadorEstadoUsuario (eUsuario listado[], int limite);
 void inicializarUsuariosHardCode(eUsuario usuarios[]);
 int buscarLugarLibre(eUsuario listado[],int limite);
@@ -22,5 +23,6 @@ int getInt (char mensaje[]);
 char getChar (char mensaje[], char auxiliarChar[]);
 int buscarPorId(eUsuario listado[] ,int limite, int id);
 int validarPalabra(char palabra[]);
-
+int validar_numero(char numero[]);
+int menu(eUsuario listado[],int limite);
 

@@ -18,6 +18,75 @@ int isspace(char)
 
 
 */
+int menu(eUsuario listado[],int limite)
+{
+     char seguir='s';
+    int opcion=0;
+    eUsuario listaUsuarios[tamUsuarios];
+    inicializadorEstadoUsuario(listaUsuarios,tamUsuarios);
+  // inicializarUsuariosHardCode(listaUsuarios);
+
+    while(seguir=='s')
+    {
+        printf("1-  Alta de usuario\n");
+        printf("2-  MODIFICAR DATOS DEL USUARIO\n");
+        printf("3-  BAJA DEL USUARIO\n");
+        printf("4-  PUBLICAR PRODUCTOS\n");
+        printf("5-  MODIFICAR PUBLICACION\n");
+        printf("6-  CANCELAR PUBLICACION\n");
+        printf("7-  COMPRAR PRODUCTO\n");
+        printf("8-  LISTAR PUBLICACIONES DEL USUARIO\n");
+        printf("9-  LISTAR PUBLICACIONES\n");
+        printf("10- LISTAR USUARIOS\n");
+        printf("11- Salir\n");
+
+        scanf("%d",&opcion);
+
+        switch(opcion)
+        {
+            case 1:
+                                alta(listaUsuarios,tamUsuarios);
+
+                break;
+            case 2:
+                mostrarPersonas(listaUsuarios,tamUsuarios);
+                getch();
+                break;
+            case 3:
+                modificar(listaUsuarios,tamUsuarios);
+                getch();// acordate que esto va en el case 2 solo estoy tessteando el mostrar personas;
+                break;
+            case 4:
+                darDebaja(listaUsuarios,tamUsuarios);
+                break;
+            case 5:
+                ordenarPorNombre(listaUsuarios,tamUsuarios);
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 11:
+                seguir = 'n';
+                break;
+        }
+         system("cls");
+    }
+}
+int validar_numero(char numero[])
+{
+    int i;
+    for(i=0; i<strlen(numero); i++)
+    {
+        if(!(isdigit(numero[i])))
+        {
+            printf("\nINGRESA SOLO NUMEROS\n");
+            return 0;
+        }
+    }
+    return 1;
+}
+
 int validarPalabra(char palabra[])
 {
     int i;
@@ -157,21 +226,33 @@ void mostrarPersonas (eUsuario mostrar [],int limite)
 }
 void modificar(eUsuario listado [],int limite)
 {
-    int opcion;
+    int opcion ;
     int i;
     int opcion2;
-    char auxiliar[20];
-    mostrarPersonas(listado, limite);
-    opcion=getInt("ingrese el id que quiere modificar");
+  // char id [20];
+mostrarPersonas(listado, limite);
+                do{
+
+                  printf("ingrese el id:\n");
+                 fflush(stdin);
+                 gets(auxiliar);
+           // scanf("%s",id);
+
+                    }
+                while(!validar_numero(auxiliar));
+         opcion=atoi(auxiliar);
+          //  scanf("%d",&opcion);
+   opcion=buscarPorId(listado,limite,opcion);
+
     for(i=0; i<limite; i++)
     {
-        if(opcion==listado[i].idUsuario)
+
+        if (opcion==listado[i].idUsuario)
         {
             opcion2=getInt("que desea modificar ? \n 1-NOMBRE\n");
             switch(opcion2)
             {
             case 1:
-                //
                 do
                 {
                     printf("INGRESE SU NUEVO NOMBRE\n");
@@ -179,7 +260,7 @@ void modificar(eUsuario listado [],int limite)
                     gets(auxiliar);
                 }
                 while(!validarPalabra(auxiliar));
-                rcpy(listado[i].nombre,auxiliar);
+                strcpy(listado[opcion].nombre,auxiliar);
                 printf("se a cambiado correctamente el nombre \n");
 
 
