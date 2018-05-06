@@ -20,11 +20,11 @@ int isspace(char)
 */
 int menu(eUsuario listado[],int limite)
 {
-     char seguir='s';
+    char seguir='s';
     int opcion=0;
     eUsuario listaUsuarios[tamUsuarios];
     inicializadorEstadoUsuario(listaUsuarios,tamUsuarios);
-  // inicializarUsuariosHardCode(listaUsuarios);
+    // inicializarUsuariosHardCode(listaUsuarios);
 
     while(seguir=='s')
     {
@@ -44,33 +44,33 @@ int menu(eUsuario listado[],int limite)
 
         switch(opcion)
         {
-            case 1:
-                                alta(listaUsuarios,tamUsuarios);
+        case 1:
+            alta(listaUsuarios,tamUsuarios);
 
-                break;
-            case 2:
-                mostrarPersonas(listaUsuarios,tamUsuarios);
-                getch();
-                break;
-            case 3:
-                modificar(listaUsuarios,tamUsuarios);
-                getch();// acordate que esto va en el case 2 solo estoy tessteando el mostrar personas;
-                break;
-            case 4:
-                darDebaja(listaUsuarios,tamUsuarios);
-                break;
-            case 5:
-                ordenarPorNombre(listaUsuarios,tamUsuarios);
-                break;
-            case 6:
-                break;
-            case 7:
-                break;
-            case 11:
-                seguir = 'n';
-                break;
+            break;
+        case 2:
+            mostrarPersonas(listaUsuarios,tamUsuarios);
+            getch();
+            break;
+        case 3:
+            modificar(listaUsuarios,tamUsuarios);
+            getch();// acordate que esto va en el case 2 solo estoy tessteando el mostrar personas;
+            break;
+        case 4:
+            darDebaja(listaUsuarios,tamUsuarios);
+            break;
+        case 5:
+            ordenarPorNombre(listaUsuarios,tamUsuarios);
+            break;
+        case 6:
+            break;
+        case 7:
+            break;
+        case 11:
+            seguir = 'n';
+            break;
         }
-         system("cls");
+        system("cls");
     }
 }
 int validar_numero(char numero[])
@@ -229,20 +229,18 @@ void modificar(eUsuario listado [],int limite)
     int opcion ;
     int i;
     int opcion2;
-  // char id [20];
-mostrarPersonas(listado, limite);
-                do{
+    mostrarPersonas(listado, limite);
+    do
+    {
 
-                  printf("ingrese el id:\n");
-                 fflush(stdin);
-                 gets(auxiliar);
-           // scanf("%s",id);
+        printf("ingrese el id:\n");
+        fflush(stdin);
+        gets(auxiliar);
 
-                    }
-                while(!validar_numero(auxiliar));
-         opcion=atoi(auxiliar);
-          //  scanf("%d",&opcion);
-   opcion=buscarPorId(listado,limite,opcion);
+    }
+    while(!validar_numero(auxiliar));
+    opcion=atoi(auxiliar);
+    opcion=buscarPorId(listado,limite,opcion);
 
     for(i=0; i<limite; i++)
     {
