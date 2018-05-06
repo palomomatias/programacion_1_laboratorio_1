@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1525574834 source:j:\facultad\parcialtest\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1525574834 j:\facultad\parcialtest\funciones.h
+
+1525576411 source:j:\facultad\parcialtest\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	<ctype.h>
+
