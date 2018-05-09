@@ -28,6 +28,8 @@ int menu(eUsuario listado[],int limite)
 
     while(seguir=='s')
     {
+           do
+    {
         printf("1-  Alta de usuario\n");
         printf("2-  MODIFICAR DATOS DEL USUARIO\n");
         printf("3-  BAJA DEL USUARIO\n");
@@ -40,7 +42,12 @@ int menu(eUsuario listado[],int limite)
         printf("10- LISTAR USUARIOS\n");
         printf("11- Salir\n");
 
-        scanf("%d",&opcion);
+                fflush(stdin);
+        gets(auxiliar);
+
+
+        }          while(!validar_numero(auxiliar));
+    opcion=atoi(auxiliar);
 
         switch(opcion)
         {
@@ -78,7 +85,7 @@ int validar_numero(char numero[])
     int i;
     for(i=0; i<strlen(numero); i++)
     {
-        if(!(isdigit(numero[i])))
+        if(!(isdigit(numero[i]))||(isspace(numero[i])))
         {
             printf("\nINGRESA SOLO NUMEROS\n");
             return 0;
@@ -92,7 +99,7 @@ int validarPalabra(char palabra[])
     int i;
     for(i=0; i<strlen(palabra); i++)
     {
-        if(!(isalpha(palabra[i])))
+        if(!(isalpha(palabra[i]))||(isspace(palabra[i])))
         {
             printf("\nERROR SOLO PALABRA, REINGRESE");
             return 0;
@@ -120,7 +127,7 @@ int getInt (char mensaje[])
 
 int mostrarUno(eUsuario parametro)
 {
-    printf("\n %s - %d",parametro.nombre,parametro.idUsuario);
+    printf("\nNOMBRE %s - ID %d\n",parametro.nombre,parametro.idUsuario);
 }
 int buscarPorId(eUsuario listado[],int limite, int id)
 {
@@ -200,9 +207,14 @@ int alta(eUsuario  listado[],int limite)
         if(indice >= 0)
         {
 
-            printf("ingrese su Nombre\n");
-            fflush(stdin);
-            gets(listado[indice].nombre);
+                         do
+                {
+                    printf("INGRESE SU NOMBRE\n");
+                    fflush(stdin);
+                    gets(auxiliar);
+                }
+                while(!validarPalabra(auxiliar));
+                strcpy(listado[indice].nombre,auxiliar);
             listado[indice].idUsuario=siguienteId(listado,limite);
             listado[indice].estado = LIBRE;
 
@@ -229,6 +241,7 @@ void modificar(eUsuario listado [],int limite)
     int opcion ;
     int i;
     int opcion2;
+    int id;
     mostrarPersonas(listado, limite);
     do
     {
@@ -240,14 +253,26 @@ void modificar(eUsuario listado [],int limite)
     }
     while(!validar_numero(auxiliar));
     opcion=atoi(auxiliar);
+    id=opcion;
     opcion=buscarPorId(listado,limite,opcion);
 
     for(i=0; i<limite; i++)
     {
 
-        if (opcion==listado[i].idUsuario)
+        if (opcion==listado[i].idUsuario||id==listado[i].idUsuario)
         {
-            opcion2=getInt("que desea modificar ? \n 1-NOMBRE\n");
+
+               do
+    {
+
+        printf("que desea modificar ? \n 1-NOMBRE\n");
+        fflush(stdin);
+        gets(auxiliar);
+
+    }
+    while(!validar_numero(auxiliar));
+    opcion2=atoi(auxiliar);
+
             switch(opcion2)
             {
             case 1:
@@ -286,8 +311,16 @@ void darDebaja(eUsuario listado [],int limite)
     int i;
     int opcion2;
     mostrarPersonas(listado,limite);
-    printf("ingrese el id que quiere borrar");
-    scanf("%d",&opcion);
+   do
+    {
+
+        printf("ingrese el id que uqiere dar de baja:\n");
+        fflush(stdin);
+        gets(auxiliar);
+
+    }
+    while(!validar_numero(auxiliar));
+    opcion=atoi(auxiliar);
     for(i=0; i<limite; i++)
     {
         fflush(stdin);
@@ -295,8 +328,17 @@ void darDebaja(eUsuario listado [],int limite)
         {
             fflush(stdin);
             mostrarUno(listado[i]);
-            printf("esta seguro que quiere dar de baja ? \n aprete 1 para borrar 0 para cancelar ");
-            scanf("%d",&opcion2);
+
+             do
+    {
+
+       printf("esta seguro que quiere dar de baja ? \n aprete 1 para borrar 0 para cancelar ");
+        fflush(stdin);
+        gets(auxiliar);
+
+    }
+    while(!validar_numero(auxiliar));
+    opcion2=atoi(auxiliar);
 
             if (opcion2==1)
             {
