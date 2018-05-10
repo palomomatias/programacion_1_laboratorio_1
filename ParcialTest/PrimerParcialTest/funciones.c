@@ -99,11 +99,15 @@ int validarPalabra(char palabra[])
     int i;
     for(i=0; i<strlen(palabra); i++)
     {
-        if(!(isalpha(palabra[i]))||(isspace(palabra[i])))
+
+        if(!(isalpha(palabra[i]))||(isspace(palabra[i]))||palabra[i]== ' \0')
         {
             printf("\nERROR SOLO PALABRA, REINGRESE");
             return 0;
         }
+
+
+
     }
     return 1;
 }
