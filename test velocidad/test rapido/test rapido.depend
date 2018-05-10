@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1525929192 source:j:\facultad\test rapido\main.c
+	<stdio.h>
+	<stdlib.h>
+	"productos.h"
+
+1525929726 j:\facultad\test rapido\productos.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1525929115 source:j:\facultad\test rapido\productos.c
+	"productos.h"
+

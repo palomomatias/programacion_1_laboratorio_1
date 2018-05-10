@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1525926084 source:j:\facultad\5intento\productos.c
+	"productos.h"
+
+1525927689 j:\facultad\5intento\productos.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<ctype.h>
+
+1525927479 source:j:\facultad\5intento\main.c
+	<stdio.h>
+	<stdlib.h>
+	"productos.h"
+
