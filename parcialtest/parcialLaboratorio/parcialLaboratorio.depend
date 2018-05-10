@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1525961602 source:d:\palomomatias\parciallaboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"propetarios.h"
+
+1525961888 d:\palomomatias\parciallaboratorio\propetarios.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1525961775 source:d:\palomomatias\parciallaboratorio\propetarios.c
+	"propetarios.h"
+
