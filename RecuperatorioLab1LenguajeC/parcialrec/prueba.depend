@@ -1,0 +1,105 @@
+# depslib dependency file v1.0
+1527143212 source:j:\facultad\funcara esta meirda\propetario.c
+	"propetario.h"
+
+1527141294 j:\facultad\funcara esta meirda\propetario.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1527143223 source:j:\facultad\funcara esta meirda\main.c
+	<stdio.h>
+	<stdlib.h>
+	"egresos.h"
+
+1527127309 j:\facultad\funcara esta meirda\coches.h
+	"propetario.h"
+
+1527143208 source:j:\facultad\funcara esta meirda\coches.c
+	"coches.h"
+
+1527141294 j:\facultad\funcara esta meirda\egresos.h
+	"coches.h"
+
+1527143199 source:j:\facultad\funcara esta meirda\egresos.c
+	"egresos.h"
+
+1527162938 source:d:\palomo\programacion_1_laboratorio_1\funcara esta meirda\coches.c
+	"coches.h"
+
+1527162938 d:\palomo\programacion_1_laboratorio_1\funcara esta meirda\coches.h
+	"propetario.h"
+
+1527162938 d:\palomo\programacion_1_laboratorio_1\funcara esta meirda\propetario.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1527162938 source:d:\palomo\programacion_1_laboratorio_1\funcara esta meirda\egresos.c
+	"egresos.h"
+
+1527162938 d:\palomo\programacion_1_laboratorio_1\funcara esta meirda\egresos.h
+	"coches.h"
+
+1527162938 source:d:\palomo\programacion_1_laboratorio_1\funcara esta meirda\main.c
+	<stdio.h>
+	<stdlib.h>
+	"egresos.h"
+
+1527162938 source:d:\palomo\programacion_1_laboratorio_1\funcara esta meirda\propetario.c
+	"propetario.h"
+
+1527162938 source:c:\users\alumno\desktop\palomo gomez gonzalo matias\recuperatoriolab1lenguajec\parcialrec\coches.c
+	"coches.h"
+
+1527162938 c:\users\alumno\desktop\palomo gomez gonzalo matias\recuperatoriolab1lenguajec\parcialrec\coches.h
+	"propetario.h"
+
+1527162938 c:\users\alumno\desktop\palomo gomez gonzalo matias\recuperatoriolab1lenguajec\parcialrec\propetario.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1527162938 source:c:\users\alumno\desktop\palomo gomez gonzalo matias\recuperatoriolab1lenguajec\parcialrec\egresos.c
+	"egresos.h"
+
+1527162938 c:\users\alumno\desktop\palomo gomez gonzalo matias\recuperatoriolab1lenguajec\parcialrec\egresos.h
+	"coches.h"
+
+1527162938 source:c:\users\alumno\desktop\palomo gomez gonzalo matias\recuperatoriolab1lenguajec\parcialrec\main.c
+	<stdio.h>
+	<stdlib.h>
+	"egresos.h"
+
+1527162938 source:c:\users\alumno\desktop\palomo gomez gonzalo matias\recuperatoriolab1lenguajec\parcialrec\propetario.c
+	"propetario.h"
+
+1527771117 source:d:\palomo\parcialrec\recuperatoriolab1lenguajec\parcialrec\coches.c
+	"coches.h"
+
+1527771117 d:\palomo\parcialrec\recuperatoriolab1lenguajec\parcialrec\coches.h
+	"propetario.h"
+
+1527773190 d:\palomo\parcialrec\recuperatoriolab1lenguajec\parcialrec\propetario.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1527778022 source:d:\palomo\parcialrec\recuperatoriolab1lenguajec\parcialrec\egresos.c
+	"egresos.h"
+
+1527775671 d:\palomo\parcialrec\recuperatoriolab1lenguajec\parcialrec\egresos.h
+	"coches.h"
+
+1527775959 source:d:\palomo\parcialrec\recuperatoriolab1lenguajec\parcialrec\main.c
+	<stdio.h>
+	<stdlib.h>
+	"egresos.h"
+
+1527773190 source:d:\palomo\parcialrec\recuperatoriolab1lenguajec\parcialrec\propetario.c
+	"propetario.h"
+
