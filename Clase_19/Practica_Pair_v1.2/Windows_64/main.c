@@ -25,7 +25,7 @@ Employee* e1;
 Employee* e2;
 e1=(Employee*)malloc(sizeof(Employee)*1);
 e1->id=666;
-strcpy(e1->name,"juan");
+strcpy(e1->name,"pedro");
 strcpy(e1->lastName,"gomez");
 e1->isEmpty=1;
 al_add(lista,e1);
@@ -37,16 +37,18 @@ employee_print(aux);
 */
 e2=(Employee*)malloc(sizeof(Employee)*1);
 e2->id=111;
-strcpy(e2->name,"pedro");
+strcpy(e2->name,"juan");
 strcpy(e2->lastName,"jose");
 e2->isEmpty=1;
 al_add(lista,e2);
+mostrar= al_len(lista);
 // no se necesita hacer otro malloc
-for(i=0;i<2;i++)
+al_sort(lista,employee_compare,1);
+for(i=0;i<mostrar;i++)
 {aux=(Employee*)al_get(lista,i);
 employee_print(aux);
 }
-mostrar= al_len(lista);
+
 printf("size del array %d",mostrar);
     return 0;
 }

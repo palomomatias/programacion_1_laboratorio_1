@@ -4,9 +4,16 @@
 #include "Employee.h"
 
 
-int employee_compare(void* pEmployeeA,void* pEmployeeB)
+int employee_compare(void* pEmployeeA,void* pEmployeeB)// segun el criterio
 {
-    return 0;
+int retorno;
+  Employee* e1;
+  Employee* e2;
+  e1=(Employee*)pEmployeeA;
+  e2=(Employee*)pEmployeeB;
+
+    retorno=strcmp(e1->name,e2->name);
+    return retorno;
 }
 
 
