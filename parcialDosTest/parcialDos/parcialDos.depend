@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1530162921 source:c:\users\palom\desktop\programacion_1_laboratorio_1\parcialdostest\parcialdos\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1530162921 c:\users\palom\desktop\programacion_1_laboratorio_1\parcialdostest\parcialdos\arraylist.h
+
+1530169731 source:c:\users\palom\desktop\programacion_1_laboratorio_1\parcialdostest\parcialdos\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"funciones.h"
+
+1530166392 c:\users\palom\desktop\programacion_1_laboratorio_1\parcialdostest\parcialdos\funciones.h
+	"Arraylist.h"
+
+1530169487 source:c:\users\palom\desktop\programacion_1_laboratorio_1\parcialdostest\parcialdos\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"funciones.h"
+
