@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1530162921 source:c:\users\palom\desktop\programacion_1_laboratorio_1\parse\parseer\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1530162921 c:\users\palom\desktop\programacion_1_laboratorio_1\parse\parseer\arraylist.h
+
+1530173132 source:c:\users\palom\desktop\programacion_1_laboratorio_1\parse\parseer\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"parser.h"
+
+1530172872 c:\users\palom\desktop\programacion_1_laboratorio_1\parse\parseer\parser.h
+	"ArrayList.h"
+
+1530173142 source:c:\users\palom\desktop\programacion_1_laboratorio_1\parse\parseer\parser.c
+	<string.h>
+	<stdio.h>
+	"parser.h"
+
