@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1530850422 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\parcialdosrec\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1530850422 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\parcialdosrec\arraylist.h
+
+1530850532 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\parcialdosrec\main.c
+	<stdio.h>
+	<stdlib.h>
+	"parsaer.h"
+
+1530948083 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\parcialdosrec\parsaer.h
+	"funciones.h"
+	"ArrayList.h"
+	<stdio.h>
+
+1530947804 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\parcialdosrec\funciones.h
+	"ArrayList.h"
+
+1530948042 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\parcialdosrec\funciones.c
+	"funciones.h"
+	<ctype.h>
+	<string.h>
+	<time.h>
+	<stdio.h>
+
+1530948042 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\parcialdosrec\parsaer.c
+	"parsaer.h"
+	<string.h>
+
