@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1531015667 source:c:\users\palom\desktop\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1531015667 c:\users\palom\desktop\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\arraylist.h
+
+1531017766 source:c:\users\palom\desktop\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\parser.c
+	"parser.h"
+
+1531017766 c:\users\palom\desktop\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\parser.h
+	"funciones.h"
+
+1531023892 c:\users\palom\desktop\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\funciones.h
+	"ArrayList.h"
+
+1531021966 source:c:\users\palom\desktop\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\funciones.c
+	"funciones.h"
+	<stdio.h>
+
+1531024715 source:c:\users\palom\desktop\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\main.c
+	<stdio.h>
+	<stdlib.h>
+	"parser.h"
+	"funciones.h"
+
