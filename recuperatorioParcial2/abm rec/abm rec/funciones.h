@@ -28,3 +28,4 @@ void idAutoIncremental(ArrayList* this, eCliente* aux,ArrayList* borrados);
 int compare_id(ArrayList* this,int id);
 void baja(ArrayList* this, ArrayList* borrados);
 void alta(ArrayList* this,ArrayList* borrados);
+void modificar(ArrayList* this);

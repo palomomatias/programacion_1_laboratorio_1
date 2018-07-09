@@ -44,3 +44,24 @@ int parserRead(ArrayList* this)
     }
 }
 
+
+void parserWrite(ArrayList* this)
+{
+    int i;
+    eCliente* aux;
+    FILE* pFile;
+    pFile=fopen("data.csv","w");
+    if(pFile!=NULL)
+    {
+        for(i=0; i<al_len(this); i++)
+        {
+            aux=this->get(this,i);
+            if(aux!=NULL)
+            {
+                fprintf(pFile,"%d,%s,%s,%d\n",get_id(aux),get_nombre(aux),get_apellido(aux),get_dni(aux));
+            }
+        }
+        printf("\nArchivo guardado con exito\n ");
+    }
+    fclose(pFile);
+}

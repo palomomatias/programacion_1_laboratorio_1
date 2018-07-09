@@ -1,9 +1,7 @@
 #include "funciones.h"
 #include "utn.h"
 #include <stdio.h>
-#define LiBRE 0
-#define OCUPADO 1
-#define BORRADO 2
+
 
 eCliente* constructor()
 {
@@ -120,7 +118,7 @@ void alta(ArrayList* this,ArrayList* borrados)
         aux=constructor();
         if(aux!=NULL)
         {
-         dni=getValidInt("ingrese dni\n","error ingrese un dni valido\n",1,9999999);
+         dni=getValidInt("ingrese dni\n","error ingrese un dni valido\n",1,99999999);
          getValidString("ingrese su nombre\n","error reingre se nombre\n",nombre);
          getValidString("ingrese su apellido\n","error reingre se apellido\n",apellido);
                 idAutoIncremental(this,aux,borrados);
@@ -196,7 +194,54 @@ void baja(ArrayList* this, ArrayList* borrados)
 
 }
 
+void modificar(ArrayList* this)
+{
+    eCliente* aux;
+    int id;
+    int indice;
+    int opcion;
+    char nombre[50];
+    char apellido[50];
+    int dni;
+    if(this!=NULL)
+    {
+        mostrarTodo(this);
+    id=getValidInt("ingrese el id que quiere modifica \n","error reingrese el numero \n",1,99);
+    indice=compare_id(this,id);
+        if(indice!=-1)
+        {
+            aux=this->get(this,indice);
+            opcion=getValidInt("que desea modifica?\n1-NOMBRE\n2-APELLIDO\n3-DNI\n","error reingrese \n",1,3);
+            switch(opcion)
+            {
+            case 1:
+                getValidString("ingrese su nuevo nombre:\n","error solo letras reingrese\n",nombre);
+                set_nombre(aux,nombre);
+                printf("se modifico correctamente\n");
+                break;
+            case 2:
+                 getValidString("ingrese su nuevo apellido:\n","error solo letras reingrese\n",apellido);
+                set_apellido(aux,apellido);
+                printf("se modifico correctamente\n");
+                break;
+            case 3:
+                dni=getValidInt("ingrese su nuevo dni","error reingrese",1,99999999);
+                set_dni(aux,dni);
+                printf("se modifico correctamente\n");
+                break;
+            }
+        }
+        else{
+            printf("id no encontrado\n");
+        }
 
+
+
+    }
+
+
+
+}
 
 
 
