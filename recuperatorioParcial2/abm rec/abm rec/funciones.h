@@ -29,3 +29,5 @@ int compare_id(ArrayList* this,int id);
 void baja(ArrayList* this, ArrayList* borrados);
 void alta(ArrayList* this,ArrayList* borrados);
 void modificar(ArrayList* this);
+int compararInt(void* enteroA ,void* enteroB);
+int compareid(void* enteroA ,void* enteroB);

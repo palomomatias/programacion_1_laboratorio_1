@@ -34,20 +34,21 @@
 
 1531027652 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\arraylist.h
 
-1531150040 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\funciones.c
+1531159829 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\funciones.c
 	"funciones.h"
 	"utn.h"
 	<stdio.h>
 
-1531149665 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\funciones.h
+1531157689 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\funciones.h
 	"ArrayList.h"
 
-1531150003 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\main.c
+1531162586 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\main.c
 	<stdio.h>
 	<stdlib.h>
 	"parser.h"
 	"funciones.h"
 	"utn.h"
+	"nuevoAlquiler.h"
 
 1531150003 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\parser.h
 	"funciones.h"
@@ -64,4 +65,13 @@
 	<time.h>
 	<string.h>
 	"utn.h"
+
+1531164242 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\nuevoalquiler.h
+	"funciones.h"
+	"ArrayList.h"
+
+1531164242 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\nuevoalquiler.c
+	"nuevoAlquiler.h"
+	<stdlib.h>
+	<string.h>
 

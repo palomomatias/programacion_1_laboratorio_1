@@ -123,7 +123,7 @@ void alta(ArrayList* this,ArrayList* borrados)
          getValidString("ingrese su apellido\n","error reingre se apellido\n",apellido);
                 idAutoIncremental(this,aux,borrados);
             //aux->estado=OCUPADO;Barboza04
-                aux->estado==1;
+             //   aux->estado==1;
             set_apellido(aux,apellido);
             set_nombre(aux,nombre);
             set_dni(aux,dni);
@@ -243,7 +243,56 @@ void modificar(ArrayList* this)
 
 }
 
+int compararInt(void* enteroA ,void* enteroB)
+{
+    int retorno;
 
+    eCliente* intA;
+    eCliente* intB;
+
+    intA=(eCliente*)enteroA;
+    intB=(eCliente*)enteroB;
+
+  if(intA->dni<intB->dni)
+  {
+      retorno=-1;
+  }
+  else if(intA->dni>intB->dni)
+  {
+      retorno=1;
+  }
+  else
+  {
+      retorno=0;
+  }
+
+  return retorno;
+}
+int compareid(void* enteroA ,void* enteroB)
+{
+    int retorno;
+
+    eCliente* intA;
+    eCliente* intB;
+
+    intA=(eCliente*)enteroA;
+    intB=(eCliente*)enteroB;
+
+  if(intA->id<intB->id)
+  {
+      retorno=-1;
+  }
+  else if(intA->id>intB->id)
+  {
+      retorno=1;
+  }
+  else
+  {
+      retorno=0;
+  }
+
+  return retorno;
+}
 
 
 
