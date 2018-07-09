@@ -28,8 +28,9 @@ int main()
         printf(" 4-  listar borrados\n");
         printf(" 5-  modificar\n");
         printf(" 6-  ordenar por dni\n");
-          printf(" 7- alquilar\n");
-        printf(" 8-  Salir\n");
+        printf(" 7-  alquilar\n");
+        printf(" 8-  mostrar alquilados\n");
+        printf(" 9-  Salir\n");
         opcion=getValidInt("ingrese una opcion\n","error reingrese una opcion del 1 a 9\n",1,15);
 
         switch(opcion)
@@ -59,10 +60,22 @@ int main()
             break;
         case 7:
            altaAlquiler(alquiler,alquilado,listaPropietarios);
-          mostrarAlquiler(alquiler);
+
             break;
 
                 case 8:
+if(!alquiler->isEmpty(alquiler))
+{
+
+
+mostrarAlquiler(alquiler,listaPropietarios);
+}
+else
+{
+    printf("no hay nada alquilado\n");
+}
+            break;
+             case 9:
             seguir = 'n';
             break;
         }

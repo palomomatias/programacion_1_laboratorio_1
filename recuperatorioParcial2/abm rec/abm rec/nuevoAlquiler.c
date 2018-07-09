@@ -74,26 +74,36 @@ void idAutoIncrementalAlquiler(ArrayList* this, nuevoAlquiler* aux,ArrayList* al
     }
     aux->id=auxId;
 }
-void mostrarAlquiler(ArrayList* this)
+void mostrarAlquiler(ArrayList* this, ArrayList* clientes)
 {
     int i;
     int len=this->len(this);
     nuevoAlquiler* aux;
-    printf("* ID ----- EQUIPO -------- DIAS ------ IDPROPETARIO *\n\n");
+    eCliente* cliente;
+    int j;
+    printf("* ID ----- EQUIPO -------- DIAS ------ IDPRO-------NOMBRECLIENTE *\n\n");
     for(i=0; i<len; i++)
     {
         aux=this->get(this,i);
         if(aux!=NULL)
         {
-            mostraUnoAlquiler(aux,this);
+             for(j=0;j<clientes->len(clientes);j++)
+             {
+                  cliente=this->get(clientes,j);
+                if(aux->idCliente==cliente->id)
+                {
+                     mostraUnoAlquiler(aux,this,cliente);
+                }
+             }
+
         }
     }
 }
-void mostraUnoAlquiler(nuevoAlquiler* p,ArrayList* this)
+void mostraUnoAlquiler(nuevoAlquiler* p,ArrayList* this,eCliente* c)
 {
 
     //printf("   %-8d%-15s%-18s%-d\n", al_indexOf(this, p),p->nombre,p->apellido, p->dni);
-    printf("   %-8d%-15s%-18d%-d\n",get_alquilerId(p),get_alquilerEquipo(p),get_alquilerTiempo(p),get_alquilerIdPro(p));
+    printf("   %-8d%-15s%-18d%-8d%-s\n",get_alquilerId(p),get_alquilerEquipo(p),get_alquilerTiempo(p),get_alquilerIdPro(p),get_nombre(c));
 
 }
 
@@ -134,7 +144,7 @@ void altaAlquiler(ArrayList* alquiler,ArrayList* alquilado,ArrayList* listaClien
             if(indice!=-1)
             {
                tiempo=getValidInt("ingrese los dias que se va a quedar\n","error solo numeros\n");
-                opcion=getValidInt("ingrese el equipo que quiere alquilar\n1- AMOLADORA\n2- MEZCLADORA\n3- TALADRO","Error ingrese solo numeros",1,3);
+                opcion=getValidInt("ingrese el equipo que quiere alquilar\n1- AMOLADORA\n2- MEZCLADORA\n3- TALADRO\n","Error ingrese solo numeros\n",1,3);
 
 
     switch(opcion)
