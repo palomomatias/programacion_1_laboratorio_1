@@ -1,4 +1,5 @@
 #include "funciones.h"
+#include "utn.h"
 #include <stdio.h>
 #define LiBRE 0
 #define OCUPADO 1
@@ -13,6 +14,10 @@ eCliente* constructor()
 void set_dni(eCliente* this, int dato)
 {
     this->dni=dato;
+}
+void set_estado(eCliente* this, int dato)
+{
+    this->estado=dato;
 }
 void set_id(eCliente* this, int dato)
 {
@@ -50,133 +55,83 @@ void mostrarTodo(ArrayList* this)
     int i;
     int len=this->len(this);
     eCliente* aux;
-    printf("\nid\tDni\tNombre\tApellido\tEstado\n");
+    printf("* ID ----- NOMBRE -------- APELLIDO ------ DNI *\n\n");
     for(i=0; i<len; i++)
     {
         aux=this->get(this,i);
         if(aux!=NULL)
         {
-            mostraUno(aux);
+            mostraUno(aux,this);
         }
     }
 }
-void mostraUno(eCliente* this)
+void mostraUno(eCliente* p,ArrayList* this)
 {
-    printf("\n%d  \t%d\t%s\t%s\t%d\n",get_id(this),get_dni(this),get_nombre(this),get_apellido(this),this->estado);
+
+    //printf("   %-8d%-15s%-18s%-d\n", al_indexOf(this, p),p->nombre,p->apellido, p->dni);
+    printf("   %-8d%-15s%-18s%-d\n",get_id(p),get_nombre(p),get_apellido(p),get_dni(p));
+
 }
 
-
-
-
-char pedirMensajeInt(char mensaje[],int* dato)
+void idAutoIncremental(ArrayList* this, eCliente* aux,ArrayList* borrados)
 {
-    char auxiliarChar[50];
-    printf("%s",mensaje);
-    gets(auxiliarChar);
-    fflush(stdin);
-    validar_numero(auxiliarChar);
-    *(dato)=atoi(auxiliarChar);
-
-    return 1;
-}
-char pedirMensajeString(char mensaje[], char auxiliarChar[])
-{
-    printf("%s",mensaje);
-    gets(auxiliarChar);
-    fflush(stdin);
-
-
-    validarPalabra(auxiliarChar);
-
-    return auxiliarChar;
-}
-int validar_numero(char numero[])
-{
-    int i;
-    for(i=0; i<strlen(numero); i++)
-
-    {
-        if(isdigit(numero[i])==0||numero[i]==' ')
-        {
-
-
-            do
-            {
-                printf("\nError solo numero reingrese\n");
-                gets(numero);
-                fflush(stdin);
-            }
-            while(isdigit(numero[i])==0);
-
-        }
-    }
-    return 1;
-}
-int validarPalabra(char palabra[])
-{
-    int i;
-    for(i=0; i<strlen(palabra); i++)
-    {
-
-        if(isalpha(palabra[i])==0)
-        {
-            do
-            {
-                printf("\nError solo palabra reingrese \n");
-                gets(palabra);
-
-                fflush(stdin);
-            }
-            while(isalpha(palabra[i])==0);
-
-
-        }
-    }
-    return 1;
-}
-void idAutoIncremental(ArrayList* this, eCliente* aux)
-{
-    int contador=1;
+    int auxId=this->len(this)+1;
     eCliente* auxiliar;
     int i;
+    int j;
     if(this!=NULL&&aux!=NULL)
     {
         for(i=0; i<al_len(this); i++)
         {
-            auxiliar=al_get(this,i);
-            if(auxiliar->estado==OCUPADO)
+
+            while(((eCliente*)*(this->pElements+i))->id==auxId)
             {
-                contador=contador+1;
+                auxId++;
+
             }
+
         }
+                                for(j=0; j<al_len(borrados); j++)
+            {
+
+                while(((eCliente*)*(borrados->pElements+j))->id==auxId)
+                {
+                    auxId++;
+
+                }
+
+
+            }
+
 
 
     }
-    aux->id=contador;
+    aux->id=auxId;
 }
-void alta(ArrayList* this)
+void alta(ArrayList* this,ArrayList* borrados)
 {
     eCliente* aux;
     int dni;
     char nombre[50];
     char apellido[50];
-    int id;
+    int i;
     if(this!=NULL)
     {
         aux=constructor();
         if(aux!=NULL)
         {
-            pedirMensajeInt("ingrese su dni\n",&dni);
-            pedirMensajeString("ingrse su nombre\n",nombre);
-            pedirMensajeString("ingrese su apellido\n",apellido);
-            idAutoIncremental(this,aux);
-            aux->estado=OCUPADO;
+         dni=getValidInt("ingrese dni\n","error ingrese un dni valido\n",1,9999999);
+         getValidString("ingrese su nombre\n","error reingre se nombre\n",nombre);
+         getValidString("ingrese su apellido\n","error reingre se apellido\n",apellido);
+                idAutoIncremental(this,aux,borrados);
+            //aux->estado=OCUPADO;Barboza04
+                aux->estado==1;
             set_apellido(aux,apellido);
             set_nombre(aux,nombre);
             set_dni(aux,dni);
-         //   set_id(aux,id);
+//            set_id(aux,auxId);
             this->add(this,aux);
-s
+
         }
         else
         {
@@ -184,8 +139,62 @@ s
         }
     }
 }
+int compare_id(ArrayList* this,int id)
+{
+    int i;
+    int len;
+    eCliente* aux;
+    if(this!=NULL)
+    {
+        len=this->len(this);
+        for(i=0; i<len; i++)
+        {
+            aux=this->get(this,i);
+            if(aux!=NULL&&aux->id==id)
+            {
+                return i;
+            }
+        }
+    }
+    return -1;
+}
 
+void baja(ArrayList* this, ArrayList* borrados)
+{
+    eCliente* aux;
+    int id;
+    int indice;
+    int opcion;
+    if(this!=NULL)
+    {
+        mostrarTodo(this);
+       id=getValidInt("ingrese el id que quiere dar de baja\n","error reingrese ",0,100);
+        indice=compare_id(this,id);//(lprovenzano));
+        //   indice=(eCliente*)al_get(this, id);
+        if(indice!=-1)
+        {
+           opcion=getValidInt("estas seguro que quiere dar de baja?\n- 1 para dar de baja\n- 2 Para cancelar\n","error reingrese",1,2);
+            if (opcion==1)
+            {
+                aux=this->pop(this,indice);
+                this->add(borrados,aux);
+                printf("se dio de baja\n");
+                getch();
+            }
+            else
+            {
+                printf("no se dio de baja \n");
+                getch();
+            }
+        }
+        else
+        {
+            printf("id no encontrado\n");
+            getch();
+        }
+    }
 
+}
 
 
 

@@ -22,11 +22,9 @@ char* get_nombre(eCliente* this);
 int get_dni(eCliente* this);
 char* get_apellido(eCliente* this);
 void mostrarTodo(ArrayList* this);
-void mostraUno(eCliente* this);
-
-char pedirMensajeString(char mensaje[], char auxiliarChar[]);
-int validar_numero(char numero[]);
-int validarPalabra(char palabra[]);
-void idAutoIncremental(ArrayList* this, eCliente* aux);
-char pedirMensajeInt(char mensaje[],int* dato);
-
+void mostraUno(eCliente* P,ArrayList* this);
+void set_estado(eCliente* this, int dato);
+void idAutoIncremental(ArrayList* this, eCliente* aux,ArrayList* borrados);
+int compare_id(ArrayList* this,int id);
+void baja(ArrayList* this, ArrayList* borrados);
+void alta(ArrayList* this,ArrayList* borrados);

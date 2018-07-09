@@ -26,3 +26,42 @@
 	"parser.h"
 	"funciones.h"
 
+1531027652 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1531027652 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\arraylist.h
+
+1531118820 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\funciones.c
+	"funciones.h"
+	"utn.h"
+	<stdio.h>
+
+1531118796 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\funciones.h
+	"ArrayList.h"
+
+1531119807 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\main.c
+	<stdio.h>
+	<stdlib.h>
+	"parser.h"
+	"funciones.h"
+	"utn.h"
+
+1531119807 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\parser.h
+	"funciones.h"
+
+1531120173 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\parser.c
+	"parser.h"
+	<stdio.h>
+
+1499215195 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\utn.h
+
+1531118987 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
