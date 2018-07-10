@@ -42,7 +42,7 @@
 1531157689 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\funciones.h
 	"ArrayList.h"
 
-1531182265 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\main.c
+1531184378 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\main.c
 	<stdio.h>
 	<stdlib.h>
 	"parser.h"
@@ -71,15 +71,15 @@
 	"funciones.h"
 	"ArrayList.h"
 
-1531182717 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\nuevoalquiler.c
+1531184382 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\nuevoalquiler.c
 	"nuevoAlquiler.h"
 	<stdlib.h>
 	<string.h>
 
-1531182717 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\alquilar.h
+1531184798 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\alquilar.h
 	"ArrayList.h"
 
-1531183643 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\alquilar.c
+1531184375 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\alquilar.c
 	"alquilar.h"
 	<stdlib.h>
 	"nuevoAlquiler.h"

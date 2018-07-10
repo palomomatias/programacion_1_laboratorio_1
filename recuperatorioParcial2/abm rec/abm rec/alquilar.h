@@ -4,6 +4,7 @@ typedef struct
     int id;
     char equipo[50];
     int tiempo;
+    int idCliente;
 }eAlquilado;
 int compare_idAlquilado(ArrayList* this,int id);
 void terminarAlquiler(ArrayList* alquiler, ArrayList* alquilado,ArrayList* listaclientes);
