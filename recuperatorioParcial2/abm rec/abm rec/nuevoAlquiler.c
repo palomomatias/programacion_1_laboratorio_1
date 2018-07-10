@@ -1,6 +1,7 @@
 #include"nuevoAlquiler.h"
 #include<stdlib.h>
 #include<string.h>
+
 nuevoAlquiler* constructorAlquiler()
 {
     nuevoAlquiler* aux;
@@ -39,7 +40,7 @@ char* get_alquilerEquipo(nuevoAlquiler* this)
 {
     return this->equipo;
 }
-void idAutoIncrementalAlquiler(ArrayList* this, nuevoAlquiler* aux,ArrayList* alquilado)
+int idAutoIncrementalAlquiler(ArrayList* this, nuevoAlquiler* aux,ArrayList* alquilado)
 {
     int auxId=this->len(this)+1;
     nuevoAlquiler* auxiliar;
@@ -57,17 +58,17 @@ void idAutoIncrementalAlquiler(ArrayList* this, nuevoAlquiler* aux,ArrayList* al
             }
 
         }
-                                for(j=0; j<al_len(alquilado); j++)
+        for(j=0; j<al_len(alquilado); j++)
+        {
+
+            while(((nuevoAlquiler*)*(alquilado->pElements+j))->id==auxId)
             {
-
-                while(((nuevoAlquiler*)*(alquilado->pElements+j))->id==auxId)
-                {
-                    auxId++;
-
-                }
-
+                auxId++;
 
             }
+
+
+        }
 
 
 
@@ -87,14 +88,14 @@ void mostrarAlquiler(ArrayList* this, ArrayList* clientes)
         aux=this->get(this,i);
         if(aux!=NULL)
         {
-             for(j=0;j<clientes->len(clientes);j++)
-             {
-                  cliente=this->get(clientes,j);
+            for(j=0; j<clientes->len(clientes); j++)
+            {
+                cliente=this->get(clientes,j);
                 if(aux->idCliente==cliente->id)
                 {
-                     mostraUnoAlquiler(aux,this,cliente);
+                    mostraUnoAlquiler(aux,this,cliente);
                 }
-             }
+            }
 
         }
     }
@@ -113,7 +114,7 @@ int compareIdCliente(ArrayList* this,void* elemento)
     nuevoAlquiler* aux;
     eCliente* aux2;
     int i;
-    for(i=0;i<al_len(this);i++)
+    for(i=0; i<al_len(this); i++)
     {
         aux=al_get(this,i);
         aux2=al_get(this,i);
@@ -129,9 +130,10 @@ void altaAlquiler(ArrayList* alquiler,ArrayList* alquilado,ArrayList* listaClien
 {
     nuevoAlquiler* aux;
     int tiempo;
-  //  char equipo[50];
+    //  char equipo[50];
     int indice;
     int id;
+
     int opcion;
     if(alquiler!=NULL)
     {
@@ -143,29 +145,30 @@ void altaAlquiler(ArrayList* alquiler,ArrayList* alquilado,ArrayList* listaClien
             indice=compareIdCliente(listaCliente,id);
             if(indice!=-1)
             {
-               tiempo=getValidInt("ingrese los dias que se va a quedar\n","error solo numeros\n");
+                tiempo=getValidInt("ingrese los dias que se va a quedar\n","error solo numeros\n");
                 opcion=getValidInt("ingrese el equipo que quiere alquilar\n1- AMOLADORA\n2- MEZCLADORA\n3- TALADRO\n","Error ingrese solo numeros\n",1,3);
 
 
-    switch(opcion)
-    {
-    case 1:
-        strcpy(aux->equipo,"AMOLADORA");
-        break;
-    case 2:
-        strcpy(aux->equipo,"MEZCLADORA");
-        break;
-    case 3:
-        strcpy(aux->equipo,"TALADRO");
-        break;
+                switch(opcion)
+                {
+                case 1:
+                    strcpy(aux->equipo,"AMOLADORA");
+                    break;
+                case 2:
+                    strcpy(aux->equipo,"MEZCLADORA");
+                    break;
+                case 3:
+                    strcpy(aux->equipo,"TALADRO");
+                    break;
 
-    }
-               set_alquilerTiempo(aux,tiempo);
-               set_alquilerIdPro(aux,id);
+                }
+                set_alquilerTiempo(aux,tiempo);
+                set_alquilerIdPro(aux,id);
                 idAutoIncrementalAlquiler(alquiler,aux,alquilado);
-               alquiler->add(alquiler,aux);
-               printf("se dio de alta correctamente\n");
-               getch();
+
+                alquiler->add(alquiler,aux);
+                printf("se dio de alta correctamente\n");
+                getch();
             }
             else
             {
@@ -177,28 +180,5 @@ void altaAlquiler(ArrayList* alquiler,ArrayList* alquilado,ArrayList* listaClien
 
         }
     }
-int pedirEquipo(nuevoAlquiler* aux)
-{
-    opcion=getValidInt("\n1- AMOLADORA\n2- MEZCLADORA\n3- TALADRO","Error ingrese solo numeros",1,3);
-
-
-    switch(opcion)
-    {
-    case 1:
-        strcpy(aux->equipo,"AMOLADORA");
-        break;
-    case 2:
-        strcpy(aux->equipo,"MEZCLADORA");
-        break;
-    case 3:
-        strcpy(aux->equipo,"TALADRO");
-        break;
-
-    }
-    //return 0;
 }
 
-
-
-
-}

@@ -1,5 +1,6 @@
 #include"funciones.h"
 #include"ArrayList.h"
+
 typedef struct
 {
 
@@ -22,5 +23,6 @@ void mostrarAlquiler(ArrayList* this, ArrayList* clientes);
 void mostraUnoAlquiler(nuevoAlquiler* p,ArrayList* this,eCliente* c);
 int compareIdCliente(ArrayList* this,void* elemento);
 void altaAlquiler(ArrayList* alquiler,ArrayList* alquilado,ArrayList* listaCliente);
-void idAutoIncrementalAlquiler(ArrayList* this, nuevoAlquiler* aux,ArrayList* alquilado);
+int idAutoIncrementalAlquiler(ArrayList* this, nuevoAlquiler* aux,ArrayList* alquilado);
 int pedirEquipo(nuevoAlquiler* aux);
+

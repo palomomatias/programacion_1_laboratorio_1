@@ -4,6 +4,7 @@
 #include"funciones.h"
 #include"utn.h"
 #include "nuevoAlquiler.h"
+#include"alquilar.h"
 int main()
 {
     ArrayList* listaPropietarios;
@@ -12,7 +13,7 @@ int main()
     listaBorrados=al_newArrayList();
     ArrayList* alquiler;
     alquiler=al_newArrayList();
-     ArrayList* alquilado;
+    ArrayList* alquilado;
     alquilado=al_newArrayList();
     parserRead(listaPropietarios);
     char seguir='s';
@@ -51,7 +52,7 @@ int main()
 
             break;
         case 5:
-    modificar(listaPropietarios);
+            modificar(listaPropietarios);
             break;
         case 6:
 
@@ -59,25 +60,50 @@ int main()
             mostrarTodo(listaPropietarios);
             break;
         case 7:
-           altaAlquiler(alquiler,alquilado,listaPropietarios);
+            altaAlquiler(alquiler,alquilado,listaPropietarios);
 
             break;
 
-                case 8:
-if(!alquiler->isEmpty(alquiler))
-{
+        case 8:
+            if(!alquiler->isEmpty(alquiler))
+            {
 
 
-mostrarAlquiler(alquiler,listaPropietarios);
-}
-else
-{
-    printf("no hay nada alquilado\n");
-}
+                mostrarAlquiler(alquiler,listaPropietarios);
+            }
+            else
+            {
+                printf("no hay nada alquilado\n");
+            }
             break;
-             case 9:
+        case 9:
+            if(!alquiler->isEmpty(alquiler))
+            {
+                terminarAlquiler(alquiler,alquilado,listaPropietarios);
+            }
+            else
+            {
+                printf("necesita tener alguien alquilando para entrar a este menu");
+                getch();
+            }
+            break;
+        case 10:
+
+            if(!alquilado->isEmpty(alquilado))
+            {
+                mostrarTodoTest(alquilado);
+            }
+            else
+            {
+                printf("no hay nada para mostrar");
+                getch();
+            }
+
+            break;
+        case 11:
             seguir = 'n';
             break;
+
         }
         system("pause");
         system("cls");

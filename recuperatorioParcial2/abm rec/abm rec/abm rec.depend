@@ -42,13 +42,14 @@
 1531157689 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\funciones.h
 	"ArrayList.h"
 
-1531168325 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\main.c
+1531182265 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\main.c
 	<stdio.h>
 	<stdlib.h>
 	"parser.h"
 	"funciones.h"
 	"utn.h"
 	"nuevoAlquiler.h"
+	"alquilar.h"
 
 1531150003 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\parser.h
 	"funciones.h"
@@ -66,12 +67,21 @@
 	<string.h>
 	"utn.h"
 
-1531168531 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\nuevoalquiler.h
+1531182717 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\nuevoalquiler.h
 	"funciones.h"
 	"ArrayList.h"
 
-1531169587 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\nuevoalquiler.c
+1531182717 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\nuevoalquiler.c
 	"nuevoAlquiler.h"
 	<stdlib.h>
 	<string.h>
+
+1531182717 c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\alquilar.h
+	"ArrayList.h"
+
+1531183643 source:c:\users\user\desktop\facultad\programacion_1_laboratorio_1\recuperatorioparcial2\abm rec\abm rec\alquilar.c
+	"alquilar.h"
+	<stdlib.h>
+	"nuevoAlquiler.h"
+	<time.h>
 

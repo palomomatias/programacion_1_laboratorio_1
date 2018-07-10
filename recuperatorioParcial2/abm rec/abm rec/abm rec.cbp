@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="ArrayList.h" />
+		<Unit filename="alquilar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="alquilar.h" />
 		<Unit filename="funciones.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -42,6 +46,10 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="nuevoAlquiler.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="nuevoAlquiler.h" />
 		<Unit filename="parser.c">
 			<Option compilerVar="CC" />
 		</Unit>
