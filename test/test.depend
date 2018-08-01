@@ -1,0 +1,44 @@
+# depslib dependency file v1.0
+1532515290 source:c:\users\palom\desktop\programacion_1_laboratorio_1\parse\test\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1532515290 c:\users\palom\desktop\programacion_1_laboratorio_1\parse\test\arraylist.h
+
+1531172860 source:c:\users\palom\desktop\programacion_1_laboratorio_1\parse\test\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1531172860 c:\users\palom\desktop\programacion_1_laboratorio_1\parse\test\utn.h
+
+1533095817 source:c:\users\palom\desktop\programacion_1_laboratorio_1\parse\test\letras.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"letras.h"
+
+1533086039 c:\users\palom\desktop\programacion_1_laboratorio_1\parse\test\letras.h
+	"ArrayList.h"
+
+1533102344 source:c:\users\palom\desktop\programacion_1_laboratorio_1\parse\test\main.c
+	<stdio.h>
+	<stdlib.h>
+	"letras.h"
+	"ArrayList.h"
+	"utn.h"
+	"numeros.h"
+
+1533102258 source:c:\users\palom\desktop\programacion_1_laboratorio_1\parse\test\numeros.c
+	"numeros.h"
+	<stdlib.h>
+	<stdio.h>
+
+1533101737 c:\users\palom\desktop\programacion_1_laboratorio_1\parse\test\numeros.h
+	"ArrayList.h"
+
